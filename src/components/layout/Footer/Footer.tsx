@@ -3,7 +3,7 @@ import { PlainText } from '@/components/common/Text';
 
 export const Footer = () => {
   return (
-    <div className="w-full sm:w-auto p-4 bg-white flex flex-col items-start gap-y-5">
+    <div className="w-full sm:w-auto py-6 border-t border-slate-200 bg-white/80 flex flex-col items-start gap-y-5">
       <div className="flex flex-row gap-x-3 items-center justify-center">
         <TextButton children="개인정보처리방침" />
         <TextButton children="이용약관" />
