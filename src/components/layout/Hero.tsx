@@ -1,5 +1,5 @@
 import { FeatureCheck } from "../common/Feature";
-import { StartButton } from "../common/Button";
+import { StartButton } from "../common/Button/Button";
 import { GradientText } from "../common/Text";
 import { NewBadge } from "../common/Badge";
 
