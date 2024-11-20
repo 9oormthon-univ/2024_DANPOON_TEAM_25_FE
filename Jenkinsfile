@@ -71,8 +71,6 @@ pipeline {
                 script {
                     dir("${MANIFEST_PATH}") {
                         sh """
-                        git config user.name "jenkins-bot"
-                        git config user.email "jenkins-bot@flakeide.com"
                         git add fe/deployment.yaml
                         git commit -m "bot: Update backend image to ${DOCKER_TAG}"
                         git push origin ${MANIFEST_REPO_BRANCH}
