@@ -55,11 +55,11 @@ pipeline {
                 script {
                     sh """
                     rm -rf manifest-repo
-                    git clone --branch ${MANIFEST_REPO_BRANCH} ${MANIFEST_REPO} manifest-repo
+                    git clone --branch ${MANIFEST_REPO_BRANCH} ${MANIFEST_REPO}
                     """
 
                     sh """
-                    sed -i 's|image: ${DOCKER_IMAGE}:.*|image: ${DOCKER_IMAGE}:${DOCKER_TAG}|' ${MANIFEST_REPO}/be/deployment.yaml
+                    sed -i 's|image: ${DOCKER_IMAGE}:.*|image: ${DOCKER_IMAGE}:${DOCKER_TAG}|' ${MANIFEST_REPO}/fe/deployment.yaml
                     """
                 }
             }
@@ -72,7 +72,7 @@ pipeline {
                         sh """
                         git config user.name "jenkins-bot"
                         git config user.email "jenkins-bot@flakeide.com"
-                        git add be/deployment.yaml
+                        git add fe/deployment.yaml
                         git commit -m "bot: Update backend image to ${DOCKER_TAG}"
                         git push origin ${MANIFEST_REPO_BRANCH}
                         """
