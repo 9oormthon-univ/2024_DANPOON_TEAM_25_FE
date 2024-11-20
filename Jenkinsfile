@@ -69,7 +69,7 @@ pipeline {
         stage('Commit and Push Manifest Update') {
             steps {
                 script {
-                    dir("${MANIFEST_REPO}") {
+                    dir("${MANIFEST_PATH}") {
                         sh """
                         git config user.name "jenkins-bot"
                         git config user.email "jenkins-bot@flakeide.com"
