@@ -29,6 +29,7 @@ const StartTemplate: StoryFn<typeof StartButton> = (args) => (
 export const StartButtonExample = StartTemplate.bind({});
 StartButtonExample.args = {
   children: '시작하기 버튼',
+  hasIcon: true,
 };
 
 const TextTemplate: StoryFn<typeof TextButton> = (args) => (

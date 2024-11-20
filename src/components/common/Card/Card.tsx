@@ -1,4 +1,4 @@
-import { Button } from '@/components/common/Button/Button';
+import { Button, StartButton } from '@/components/common/Button/Button';
 
 interface CharacterCardProps extends BaseProps {
   type: 'mentor' | 'mentee';
@@ -34,6 +34,6 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
       {character}
     </span>
     <span className="text-[14px] my-6 text-[#181818]/70">{description}</span>
-    <Button children="가입하기" />
+    <StartButton children="가입하기" hasIcon={false} />
   </div>
 );

@@ -65,7 +65,7 @@ export const HeroActions: React.FC<HeroActionsProps> = ({
   <div
     className={`mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 ${className}`}
   >
-    <StartButton>{buttonText}</StartButton>
+    <StartButton hasIcon={true}>{buttonText}</StartButton>
   </div>
 );
 
