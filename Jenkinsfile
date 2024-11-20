@@ -60,7 +60,7 @@ pipeline {
                     """
 
                     sh """
-                    sed -i 's|image: ${DOCKER_IMAGE}:.*|image: ${DOCKER_IMAGE}:${DOCKER_TAG}|' ${MANIFEST_REPO}/blob/${MANIFEST_REPO_BRANCH}/fe/deployment.yaml
+                    sed -i 's|image: ${DOCKER_IMAGE}:.*|image: ${DOCKER_IMAGE}:${DOCKER_TAG}|' ${MANIFEST_PATH}/blob/${MANIFEST_REPO_BRANCH}/fe/deployment.yaml
                     """
                 }
             }
