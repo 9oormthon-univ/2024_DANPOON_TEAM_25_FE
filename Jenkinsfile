@@ -69,6 +69,8 @@ pipeline {
         stage('Commit and Push Manifest Update') {
             steps {
                 script {
+
+            withCredentials([usernamePassword(credentialsId: 'jenkins-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                     dir("${MANIFEST_PATH}") {
                         sh """
                         git add fe/deployment.yaml
