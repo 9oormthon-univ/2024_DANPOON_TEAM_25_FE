@@ -3,12 +3,20 @@ pipeline {
     
     environment {
         DOCKER_IMAGE = "milkymilky0116/flake-ide-fe"
-        DOCKER_TAG = "latest"
         // Docker Hub 크리덴셜 ID를 설정합니다
         DOCKER_CREDENTIALS_ID = 'jenkins-credentials'
+        MANIFEST_REPO = "https://github.com/9oormthon-univ/2024_DANPOON_TEAM_25_MANIFEST.git"  // Manifest 깃헙 레포지토리
+        MANIFEST_REPO_BRANCH = "main"  // Manifest 브랜치
     }
     
     stages {
+        stage('Set Docker Tag') {
+            steps {
+                script {
+                    env.DOCKER_TAG = sh(script: "git describe --tags --always", returnStdout: true).trim()
+                }
+            }
+        }
         stage('Clone Repository') {
             steps {
                 git branch: 'develop',
@@ -41,6 +49,37 @@ pipeline {
                 }
             }
         }
+
+        stage('Clone and Update Manifest Repo') {
+            steps {
+                script {
+                    sh """
+                    rm -rf manifest-repo
+                    git clone --branch ${MANIFEST_REPO_BRANCH} ${MANIFEST_REPO} manifest-repo
+                    """
+
+                    sh """
+                    sed -i 's|image: ${DOCKER_IMAGE}:.*|image: ${DOCKER_IMAGE}:${DOCKER_TAG}|' ${MANIFEST_REPO}/be/deployment.yaml
+                    """
+                }
+            }
+        }
+
+        stage('Commit and Push Manifest Update') {
+            steps {
+                script {
+                    dir("${MANIFEST_REPO}") {
+                        sh """
+                        git config user.name "jenkins-bot"
+                        git config user.email "jenkins-bot@flakeide.com"
+                        git add be/deployment.yaml
+                        git commit -m "bot: Update backend image to ${DOCKER_TAG}"
+                        git push origin ${MANIFEST_REPO_BRANCH}
+                        """
+                    }
+                }
+            }
+        } 
     }
     
     post {
