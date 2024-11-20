@@ -39,3 +39,16 @@ export const TextButton: React.FC<ButtonProps> = ({ children, ...props }) => (
     {children}
   </Button>
 );
+
+export const KakaoLoginButton: React.FC<ButtonProps> = ({
+  children,
+  ...props
+}) => (
+  <Button
+    {...props}
+    className={`text-black py-3 gap-x-2 max-w-[325px] w-full px-10  sm:w-auto rounded-md cursor-pointer text-sm bg-[#FEE500] ${props.className}`}
+  >
+    <img src="/kakao.svg" alt="Kakao Icon" />
+    {children}
+  </Button>
+);
