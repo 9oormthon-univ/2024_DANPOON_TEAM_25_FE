@@ -75,7 +75,7 @@ pipeline {
                         sh """
                         git config user.name "milkymilky0116"
                         git config user.email "sjlee990129@gmail.com"
-                        git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/9oormthon-univ/2024_DANPOON_TEAM_25_FE.git
+                        git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/9oormthon-univ/2024_DANPOON_TEAM_25_MANIFEST.git
                         git add fe/deployment.yaml
                         git commit -m "bot: Update backend image to ${DOCKER_TAG}"
                         git push origin ${MANIFEST_REPO_BRANCH}
