@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Button, KakaoLoginButton, StartButton, TextButton } from './Button';
+import { Button, LoginButton, StartButton, TextButton } from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -40,11 +40,12 @@ TextButtonExample.args = {
   children: '이용약관',
 };
 
-const LoginTemplete: StoryFn<typeof KakaoLoginButton> = (args) => (
-  <KakaoLoginButton {...args} />
+const LoginTemplete: StoryFn<typeof LoginButton> = (args) => (
+  <LoginButton {...args} />
 );
 
 export const LoginButtonExample = LoginTemplete.bind({});
 LoginButtonExample.args = {
   children: '카카오로 3초 만에 시작하기',
+  type: 'kakao',
 };

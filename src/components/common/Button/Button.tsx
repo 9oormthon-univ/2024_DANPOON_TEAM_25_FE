@@ -1,9 +1,13 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 
 interface ButtonProps extends BaseProps {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+}
+
+interface LoginButtonProps extends ButtonProps {
+  type: 'kakao' | 'email';
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -40,15 +44,20 @@ export const TextButton: React.FC<ButtonProps> = ({ children, ...props }) => (
   </Button>
 );
 
-export const KakaoLoginButton: React.FC<ButtonProps> = ({
+export const LoginButton: React.FC<LoginButtonProps> = ({
   children,
+  type,
   ...props
 }) => (
   <Button
     {...props}
     className={`text-black py-3 gap-x-2 max-w-[325px] w-full px-10  sm:w-auto rounded-md cursor-pointer text-sm bg-[#FEE500] ${props.className}`}
   >
-    <img src="/kakao.svg" alt="Kakao Icon" />
+    {type === 'kakao' ? (
+      <img src="/kakao.svg" alt="Kakao Icon" />
+    ) : (
+      <Mail className="w-4 h-4" />
+    )}
     {children}
   </Button>
 );
