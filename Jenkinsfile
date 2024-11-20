@@ -55,7 +55,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    rm -rf ${MANIFEST_REPO_PATH}
+                    rm -rf ${MANIFEST_PATH}
                     git clone --branch ${MANIFEST_REPO_BRANCH} ${MANIFEST_REPO}
                     """
 
