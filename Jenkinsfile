@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE = "milkymilky0116/flake-ide-fe"
         // Docker Hub 크리덴셜 ID를 설정합니다
         DOCKER_CREDENTIALS_ID = 'jenkins-credentials'
+        MANIFEST_PATH = "2024_DANPOON_TEAM_25_MANIFEST"
         MANIFEST_REPO = "https://github.com/9oormthon-univ/2024_DANPOON_TEAM_25_MANIFEST"  // Manifest 깃헙 레포지토리
         MANIFEST_REPO_BRANCH = "main"  // Manifest 브랜치
     }
@@ -54,7 +55,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    rm -rf ${MANIFEST_REPO}
+                    rm -rf ${MANIFEST_REPO_PATH}
                     git clone --branch ${MANIFEST_REPO_BRANCH} ${MANIFEST_REPO}
                     """
 
