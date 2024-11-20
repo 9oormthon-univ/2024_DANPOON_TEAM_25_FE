@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: '9oormthon-univ/setting/12/cicd',
+                git branch: 'develop',
                     url: 'https://github.com/9oormthon-univ/2024_DANPOON_TEAM_25_FE.git'
             }
         }
