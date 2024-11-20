@@ -70,10 +70,12 @@ pipeline {
             steps {
                 script {
 
-            withCredentials([usernamePassword(credentialsId: 'jenkins-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME', variable: 'GITHUB_TOKEN')]) {
+            withCredentials([usernamePassword(credentialsId: 'jenkins-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                     dir("${MANIFEST_PATH}") {
                         sh """
-                        echo $GITHUB_TOKEN | gh auth login --with-token
+                        git config user.name "milkymilky0116"
+                        git config user.email "sjlee990129@gmail.com"
+                        git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/your-organization/your-repository.git
                         git add fe/deployment.yaml
                         git commit -m "bot: Update backend image to ${DOCKER_TAG}"
                         git push origin ${MANIFEST_REPO_BRANCH}
