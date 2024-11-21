@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Notification } from './Notification';
+import { NotificationBadge } from '@/components/common/NotificationBadge/NotificationBadge';
 
 const meta = {
-  title: 'Common/Notification',
-  component: Notification,
+  title: 'Common/NotificationBadge',
+  component: NotificationBadge,
   parameters: {
     layout: 'centered',
   },
@@ -18,7 +18,7 @@ const meta = {
       options: ['sm', 'md', 'lg'],
     },
   },
-} satisfies Meta<typeof Notification>;
+} satisfies Meta<typeof NotificationBadge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -30,9 +30,9 @@ export const Default: Story = {
 export const Variants: Story = {
   render: () => (
     <div className="flex items-center gap-4">
-      <Notification variant="default" />
-      <Notification variant="primary" />
-      <Notification variant="danger" />
+      <NotificationBadge variant="default" />
+      <NotificationBadge variant="primary" />
+      <NotificationBadge variant="danger" />
     </div>
   ),
 };
@@ -40,9 +40,9 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-4">
-      <Notification size="sm" variant="danger" />
-      <Notification size="md" variant="danger" />
-      <Notification size="lg" variant="danger" />
+      <NotificationBadge size="sm" variant="danger" />
+      <NotificationBadge size="md" variant="danger" />
+      <NotificationBadge size="lg" variant="danger" />
     </div>
   ),
 };

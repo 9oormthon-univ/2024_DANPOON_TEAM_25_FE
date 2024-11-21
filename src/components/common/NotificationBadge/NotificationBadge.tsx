@@ -1,11 +1,11 @@
 import React from 'react';
-import { NotificationProps } from '@/types/sidebar';
+import { NotificationBadgeProps } from '@/types/sidebar';
 
-export const Notification: React.FC<NotificationProps> = ({ 
-  children, 
+export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
+  children,
   variant = 'default',
   size = 'md',
-  className = '' 
+  className = '',
 }) => {
   const variants = {
     default: 'bg-gray-100 text-gray-800',
@@ -16,11 +16,13 @@ export const Notification: React.FC<NotificationProps> = ({
   const sizes = {
     sm: 'w-2 h-2',
     md: 'w-3.5 h-3.5',
-    lg: 'w-5 h-5'
+    lg: 'w-5 h-5',
   };
 
   return (
-    <div className={`rounded-full ${variants[variant]} ${sizes[size]} ${className}`}>
+    <div
+      className={`rounded-full ${variants[variant]} ${sizes[size]} ${className}`}
+    >
       {children}
     </div>
   );
