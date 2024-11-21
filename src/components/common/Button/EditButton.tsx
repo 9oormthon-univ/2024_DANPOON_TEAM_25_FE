@@ -3,6 +3,6 @@ import { Pencil } from 'lucide-react';
 
 export const EditButton = () => (
   <Button className="cursor-pointer">
-    <Pencil className="w-4 h-4 text-gray-600" />
+    <Pencil className="w-3 h-3 text-gray-600" />
   </Button>
 );

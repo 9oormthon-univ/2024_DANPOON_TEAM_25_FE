@@ -1,5 +1,5 @@
 export interface ButtonProps extends BaseProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
 }
