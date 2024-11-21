@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
-import { ArrowRightSquare } from 'lucide-react';
 
 const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
@@ -13,7 +12,14 @@ const meta: Meta<typeof PageHeader> = {
     isDetailPage: { control: 'boolean' },
     pageTitle: { control: 'text' },
     subtitle: { control: 'text' },
-    role: { control: 'text' },
+    role: {
+      control: 'select',
+      options: ['teacher', 'student'],
+    },
+    status: {
+      control: 'select',
+      options: ['pending', 'in-progress', 'completed'],
+    },
   },
 };
 
@@ -29,4 +35,5 @@ Default.args = {
   hasSubtitle: true,
   subtitle: '새로운 수업을 등록하고 관리하세요',
   role: 'teacher',
+  status: 'in-progress',
 };
