@@ -17,10 +17,10 @@ export const Dropdown = () => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex flex-row items-center justify-between border border-gray-300 rounded-md w-full px-4 py-2"
+        className="flex flex-row items-center justify-between border border-gray-300 rounded-xl w-full px-4 py-3"
       >
         <span className="text-gray-400 text-sm">{selectedValue}</span>
-        <ChevronDown className="text-gray-400" />
+        <ChevronDown className="text-gray-400 w-4 h-4" />
       </button>
 
       <div

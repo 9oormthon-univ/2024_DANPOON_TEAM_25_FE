@@ -19,11 +19,11 @@ export const Input = React.forwardRef<
   ) => (
     <div className={`flex flex-col gap-2 ${className}`}>
       {label && <span className="text-sm font-semibold">{label}</span>}
-      <div className="border border-gray-200 rounded-md bg-white">
+      <div className="border border-gray-300 rounded-xl bg-white">
         {inputSize === 'medium' ? (
           <input
             ref={ref as React.Ref<HTMLInputElement>}
-            className="py-2 px-3 rounded-md w-full focus:outline-none"
+            className="py-2 px-3 rounded-xl w-full focus:outline-none placeholder:text-sm"
             {...attributes}
           />
         ) : (
@@ -32,7 +32,7 @@ export const Input = React.forwardRef<
             maxLength={1000}
             rows={10}
             cols={5}
-            className="py-2 px-3 rounded-md w-full focus:outline-none"
+            className="py-2 px-3 rounded-xl w-full outline-none resize-none focus:outline-none placeholder:text-sm"
             {...attributes}
           />
         )}
