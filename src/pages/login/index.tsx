@@ -1,5 +1,5 @@
 import { AnimatedBackground } from '@/components/common/Background';
-import { LoginButton } from '@/components/common/Button/Button';
+import { LoginButton } from '@/components/common/Button/LoginButton';
 import { Footer } from '@/components/layout/Footer/Footer';
 import { HeroDescription, HeroTitle } from '@/components/layout/Hero';
 

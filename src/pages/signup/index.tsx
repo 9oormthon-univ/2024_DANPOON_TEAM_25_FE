@@ -1,5 +1,5 @@
 import { AnimatedBackground } from '@/components/common/Background';
-import { CharacterCard } from '@/components/common/Card/Card';
+import { CharacterCard } from '@/components/common/Card/CharacterCard';
 import { Footer } from '@/components/layout/Footer/Footer';
 
 const Signup = () => {
