@@ -27,6 +27,4 @@ const CharacterTemplate: StoryFn<typeof CharacterCard> = (args) => (
 export const CharacterCardExample = CharacterTemplate.bind({});
 CharacterCardExample.args = {
   type: 'mentor',
-  character: '눈솔',
-  description: '‘멘토’ 역할을 뜻하며, 코딩 학습을 이끌어나갑니다.',
 };
