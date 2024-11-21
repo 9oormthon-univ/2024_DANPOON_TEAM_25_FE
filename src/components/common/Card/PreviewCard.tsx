@@ -1,19 +1,23 @@
 interface PreviewCardProps extends BaseProps {
   title: string;
   description: string;
+  className?: string;
 }
 
 export const PreviewCard: React.FC<PreviewCardProps> = ({
   title,
   description,
+  className,
 }) => (
-  <div className="max-w-md flex flex-col justify-between shadow-lg shadow-gray-500/30 rounded-xl bg-white">
+  <div
+    className={`max-w-md flex flex-col justify-between shadow-lg shadow-gray-500/30 rounded-xl h-full bg-white ${className}`}
+  >
     <div className="bg-gradient-to-b from-blue-700 to-blue-500 rounded-t-xl px-4 pt-6 pb-32 relative">
       <div className="absolute top-2 right-2 bg-white/20 rounded-full text-[10px] px-2 py-1  text-white font-medium">
         미리보기
       </div>
     </div>
-    <div className="pt-4 px-4 pb-64 flex flex-col gap-4">
+    <div className="pt-4 px-4 pb-96 flex flex-col gap-4">
       <div>
         <h3 className="font-bold text-lg text-gray-900">{title}</h3>
         <p className="text-sm text-gray-500">{description}</p>
