@@ -1,4 +1,4 @@
-import { TextButton } from '@/components/common/Button/Button';
+import { TextButton } from '@/components/common/Button/TextButton';
 import { PlainText } from '@/components/common/Text';
 import { useRouter } from 'next/router';
 
