@@ -1,5 +1,6 @@
 import { AnimatedBackground } from '@/components/common/Background';
 import { CharacterCard } from '@/components/common/Card/Card';
+import { CharacterData } from '@/constants/Card';
 import { Footer } from '@/components/layout/Footer/Footer';
 
 const Signup = () => {
@@ -18,8 +19,16 @@ const Signup = () => {
             FlakeIDE에서 어떤 역할로 활동하시겠습니까?
           </p>
           <div className="flex flex-row space-x-16 items-center justify-center">
-            <CharacterCard type="mentor" />
-            <CharacterCard type="mentee" />
+            <CharacterCard
+                type="mentor"
+                character={CharacterData.mentor.character}
+                description={CharacterData.mentor.description}
+              />
+            <CharacterCard
+              type="mentee"
+              character={CharacterData.mentee.character}
+              description={CharacterData.mentee.description}
+            />
           </div>
         </section>
       </main>
