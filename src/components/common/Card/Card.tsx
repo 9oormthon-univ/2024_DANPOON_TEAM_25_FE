@@ -2,7 +2,9 @@ import { Button, StartButton } from '@/components/common/Button/Button';
 import { CharacterData } from '@/constants/Card';
 
 interface CharacterCardProps extends BaseProps {
-  type: 'mentor' | 'mentee';
+  type: 'mentor' | 'mentee'; 
+  character: string; 
+  description: string;
 }
 
 export const Card: React.FC<{ children: React.ReactNode } & BaseProps> = ({
