@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
-import { NewBadge } from '@/components/common/Badge';
+import { NewBadge } from '@/components/common/Badge/NewBadge';
 
 const meta: Meta<typeof NewBadge> = {
   title: 'Components/Badge/New Badge',
