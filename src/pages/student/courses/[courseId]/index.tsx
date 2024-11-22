@@ -6,55 +6,12 @@ import PracticeButton from '@/components/common/Button/PracticeButton';
 import { Card } from '@/components/common/Card/Card';
 import { useState } from 'react';
 import WorkItem from '@/components/layout/Work/WorkItem';
-
-interface Work {
-  id: number;
-  title: string;
-  dueDate: string;
-  remainingDays: number;
-  status: 'submitted' | 'pending' | 'late';
-}
+import { sortWorks } from '@/lib/sortWorks';
+import { worksData } from '@/data/worksData';
 
 const CourseDetail = () => {
   const [sortType, setSortType] = useState<'deadline' | 'submission'>('deadline');
-  const [showAllWorks, setShowAllWorks] = useState(false);
-
-  const works: Work[] = [
-    {
-      id: 1,
-      title: '1차시: 파이썬 기초 문법',
-      dueDate: '2024-03-20',
-      remainingDays: 2,
-      status: 'pending' as const,
-    },
-    {
-      id: 2,
-      title: '2차시: 조건문과 반복문',
-      dueDate: '2024-03-18',
-      remainingDays: 0,
-      status: 'submitted' as const,
-    },
-    {
-      id: 3,
-      title: '3차시: 함수와 모듈',
-      dueDate: '2024-03-25',
-      remainingDays: 7,
-      status: 'pending' as const,
-    },
-    {
-      id: 4,
-      title: '4차시: 클래스와 객체',
-      dueDate: '2024-03-15',
-      remainingDays: -3,
-      status: 'late' as const,
-    },
-  ].sort((a, b) => {
-    if (sortType === 'submission') {
-      const order: Record<Work['status'], number> = { pending: 0, late: 1, submitted: 2 };
-      return order[a.status] - order[b.status];
-    }
-    return a.remainingDays - b.remainingDays;
-  });
+  const sortedWorks = sortWorks(worksData, sortType);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -77,7 +34,7 @@ const CourseDetail = () => {
         </div>
         <PracticeButton url="#" />
         <Card>
-          {works.map((work) => (
+          {sortedWorks.map((work) => (
             <WorkItem key={work.id} {...work} />
           ))}
         </Card>
