@@ -12,7 +12,7 @@ export interface AvatarProps {
   className?: string;
 }
 
-export interface NotificationProps {
+export interface NotificationBadgeProps {
   children?: React.ReactNode;
   variant?: Variant;
   size?: Size;

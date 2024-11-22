@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meta, StoryFn, StoryObj } from '@storybook/react';
-import { CharacterCard } from '@/components/common/Card/CharacterCard';
+import { RoleCard } from '@/components/common/Card/RoleCard';
 
-const meta: Meta<typeof CharacterCard> = {
+const meta: Meta<typeof RoleCard> = {
   title: 'Components/Card/CharacterCard',
-  component: CharacterCard,
+  component: RoleCard,
   tags: ['autodocs'],
   argTypes: {
-    type: { control: 'text' },
+    role: { control: 'text' },
     className: { control: 'text' },
   },
 };
@@ -15,28 +15,26 @@ const meta: Meta<typeof CharacterCard> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Template: StoryFn<typeof CharacterCard> = (args) => (
-  <CharacterCard {...args} />
-);
+const Template: StoryFn<typeof RoleCard> = (args) => <RoleCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  type: 'mentor',
+  role: 'teacher',
 };
 
 export const All: Story = {
   args: {
-    type: 'mentor',
+    role: 'teacher',
   },
   render: (args) => (
     <ul>
       <li>
         <h3>눈솔</h3>
-        <CharacterCard {...args} />
+        <RoleCard {...args} />
       </li>
       <li className="mt-3">
         <h3>눈송이</h3>
-        <CharacterCard {...{ ...args, type: 'mentee' }} />
+        <RoleCard {...{ ...args, role: 'student' }} />
       </li>
     </ul>
   ),
