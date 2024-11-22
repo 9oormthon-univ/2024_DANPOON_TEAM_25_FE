@@ -45,7 +45,7 @@ const CodeInput: React.FC<CodeInputProps> = ({
           ref={(el) => {
             inputRefs.current[index] = el;
           }}
-          className="w-12 h-12 text-center text-lg font-bold bg-gray-50 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+          className="w-24 h-24 text-center text-lg font-bold bg-gray-50 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
           maxLength={1}
           value={digit}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
