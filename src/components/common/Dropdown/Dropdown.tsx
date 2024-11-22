@@ -19,12 +19,12 @@ export const Dropdown = () => {
         onClick={toggleDropdown}
         className="flex flex-row items-center justify-between border border-gray-300 rounded-xl w-full px-4 py-3"
       >
-        <span className="text-gray-400 text-sm">{selectedValue}</span>
+        <span className="text-gray-700 text-sm">{selectedValue}</span>
         <ChevronDown className="text-gray-400 w-4 h-4" />
       </button>
 
       <div
-        className={`absolute z-10 mt-2 border rounded shadow-lg h-28 overflow-y-auto w-full bg-white transition-transform transform ${
+        className={`absolute z-10 mt-2 border rounded shadow-lg h-24 overflow-y-auto w-full bg-white transition-transform transform ${
           isOpen
             ? 'ease-out duration-100 opacity-100 scale-100'
             : 'ease-in duration-75 opacity-0 scale-95'
