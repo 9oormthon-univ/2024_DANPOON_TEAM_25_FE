@@ -23,7 +23,7 @@ const CourseDetail = () => {
           subtitle="기초부터 시작하는 파이썬 프로그램"
         />
         <div className="my-8">
-          <div className="grid grid-cols-4 gap-10 mb-8">
+          <div className="grid grid-cols-4 gap-8 mb-8">
             <SummaryCard label="수강생" value="32명" icon={Users} />
             <SummaryCard label="총 워크" value="12개" icon={Book} />
             <SummaryCard label="완료율" value="78%" icon={Calendar} />
