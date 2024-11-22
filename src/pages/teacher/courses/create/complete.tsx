@@ -6,6 +6,7 @@ import { PreviewCard } from '@/components/common/Card/PreviewCard';
 import { CourseForm } from '@/components/layout/CourseForm/CourseForm';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
 import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
+import { Share2 } from 'lucide-react';
 
 const CoureseCreattionComplete: React.FC = () => {
   return (
@@ -40,7 +41,11 @@ const CoureseCreattionComplete: React.FC = () => {
 
           <div className="flex flex-row space-x-4 justify-center items-center">
             <CopyButton />
-            <InviteButton size="large" />
+            <InviteButton
+              label="공유하기"
+              className="px-5 py-3 text-lg font-medium"
+              icon={Share2}
+            />
           </div>
         </Card>
       </div>

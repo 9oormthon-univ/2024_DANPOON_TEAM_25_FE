@@ -4,10 +4,10 @@ import { Book, CheckCircle, Clock } from 'lucide-react';
 import StatCard, { StatCardProps } from './StatsCard';
 
 export default {
-  title: 'Components/StatCard',
+  title: 'Components/Card/StatCard',
   component: StatCard,
   argTypes: {
-    label: { control: 'text' }, 
+    label: { control: 'text' },
     value: { control: 'text' },
     icon: { control: false },
   },

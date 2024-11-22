@@ -4,6 +4,7 @@ import { BackButton } from '@/components/common/Button/BackButton';
 import { EditButton } from '@/components/common/Button/EditButton';
 import { InviteButton } from '@/components/common/Button/InviteButton';
 import { NotificationButton } from '@/components/common/Button/NotificationButton';
+import { Share2 } from 'lucide-react';
 
 interface PageHeaderProps extends BaseProps {
   hasBackButton?: boolean;
@@ -74,7 +75,9 @@ export const PageHeader = ({
       </div>
 
       <div className="flex flex-row items-center space-x-4">
-        {isDetailPage && role === 'teacher' ? <InviteButton /> : null}
+        {isDetailPage && role === 'teacher' ? (
+          <InviteButton label="초대하기" className="px-4 py-2" icon={Share2} />
+        ) : null}
         <NotificationButton />
         <RoleBadge role={role === 'teacher' ? '눈솔' : '눈송이'} />
       </div>
