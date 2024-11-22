@@ -5,7 +5,7 @@ interface SearchInputProps {
   placeholder?: string;
   value: string;
   onChange: (value: string) => void;
-  icon?: IconType; 
+  icon?: IconType;
   className?: string;
   inputClassName?: string;
   iconClassName?: string;
@@ -32,7 +32,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={`w-full pl-12 pr-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${inputClassName}`}
+        className={`w-full pl-12 pr-4 py-2 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${inputClassName}`}
         placeholder={placeholder}
       />
     </div>

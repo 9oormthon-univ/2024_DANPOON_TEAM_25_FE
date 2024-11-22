@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, Clock, XCircle } from 'lucide-react';
 
-type Status = 'submitted' | 'pending' | 'late';
+export type Status = 'submitted' | 'pending' | 'late';
 
 export interface WorkStatusProps {
   status: Status;
