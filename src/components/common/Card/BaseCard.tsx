@@ -10,8 +10,8 @@ export const BaseCard: React.FC<BaseCardProps> = ({
 }) => {
   const baseStyles = "bg-white rounded-xl shadow-lg transition-all";
   const variantStyles = {
-    default: "border border-gray-100 hover:shadow-xl",
-    dashed: "border-2 border-dashed border-gray-200 hover:border-blue-400",
+    default: "border border-gray-100 hover:shadow-xl cursor-pointer",
+    dashed: "border-2 border-dashed border-gray-200 hover:border-blue-400 cursor-pointer",
   };
 
   return (
