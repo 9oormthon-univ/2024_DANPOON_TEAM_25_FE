@@ -3,7 +3,7 @@ import { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { RoleCard } from '@/components/common/Card/RoleCard';
 
 const meta: Meta<typeof RoleCard> = {
-  title: 'Components/Card/CharacterCard',
+  title: 'Components/Card/Role Card',
   component: RoleCard,
   tags: ['autodocs'],
   argTypes: {
