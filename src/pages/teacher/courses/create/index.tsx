@@ -2,8 +2,11 @@ import { PreviewCard } from '@/components/common/Card/PreviewCard';
 import { CourseForm } from '@/components/layout/CourseForm/CourseForm';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
 import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
+import { useState } from 'react';
 
-const CoureseCreattion: React.FC = () => {
+const CoureseCreation: React.FC = () => {
+  const [courseName, setCourseName] = useState('');
+  const [courseDescription, setCourseDescription] = useState('');
   return (
     <div className="min-h-screen bg-gray-50/50">
       <TeacherSidebar />
@@ -19,7 +22,12 @@ const CoureseCreattion: React.FC = () => {
 
         <div className="w-full max-w-6xl min-h-[300px] space-x-5 flex flex-row justify-center mt-5">
           <div className="flex-1 max-w-[60%]">
-            <CourseForm />
+            <CourseForm
+              courseName={courseName}
+              setCourseName={setCourseName}
+              courseDescription={courseDescription}
+              setCourseDescription={setCourseDescription}
+            />
           </div>
           <div className="flex-1 max-w-[40%]">
             <PreviewCard
@@ -33,4 +41,4 @@ const CoureseCreattion: React.FC = () => {
   );
 };
 
-export default CoureseCreattion;
+export default CoureseCreation;

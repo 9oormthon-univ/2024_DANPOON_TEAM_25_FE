@@ -2,8 +2,6 @@ import { CodeBox } from '@/components/common/Box/CodeBox';
 import { CopyButton } from '@/components/common/Button/CopyButton';
 import { InviteButton } from '@/components/common/Button/InviteButton';
 import { Card } from '@/components/common/Card/Card';
-import { PreviewCard } from '@/components/common/Card/PreviewCard';
-import { CourseForm } from '@/components/layout/CourseForm/CourseForm';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
 import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
 import { Share2 } from 'lucide-react';
