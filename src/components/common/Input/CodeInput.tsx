@@ -1,20 +1,25 @@
 import React, { useState, useRef, ChangeEvent, KeyboardEvent } from 'react';
 
 export interface CodeInputProps {
-  length?: number; 
+  length?: number;
   onChange: (code: string) => void; 
+  layout?: 'horizontal' | 'vertical'; 
 }
 
-const CodeInput: React.FC<CodeInputProps> = ({ length = 6, onChange }) => {
+const CodeInput: React.FC<CodeInputProps> = ({
+  length = 6,
+  onChange,
+  layout = 'horizontal', 
+}) => {
   const [code, setCode] = useState<string[]>(Array(length).fill(''));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleInput = (index: number, value: string) => {
     if (value.length <= 1) {
       const newCode = [...code];
-      newCode[index] = value.toUpperCase(); 
+      newCode[index] = value.toUpperCase();
       setCode(newCode);
-      onChange(newCode.join('')); 
+      onChange(newCode.join(''));
 
       if (value && index < length - 1) {
         inputRefs.current[index + 1]?.focus();
@@ -29,17 +34,18 @@ const CodeInput: React.FC<CodeInputProps> = ({ length = 6, onChange }) => {
   };
 
   return (
-    <div className={`grid grid-cols-${length} gap-3 sm:gap-4 md:gap-6`}>
+    <div
+      className={`${
+        layout === 'horizontal' ? 'flex gap-4 justify-center' : 'grid gap-3 grid-cols-1'
+      }`}
+    >
       {code.map((digit, index) => (
         <input
           key={index}
           ref={(el) => {
-            inputRefs.current[index] = el; 
+            inputRefs.current[index] = el;
           }}
-          className="aspect-square w-full text-center text-3xl sm:text-4xl md:text-5xl font-bold 
-            bg-gray-50/50 border-2 border-gray-200 rounded-xl
-            focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 
-            outline-none uppercase transition-all"
+          className="w-12 h-12 text-center text-lg font-bold bg-gray-50 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring"
           maxLength={1}
           value={digit}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
