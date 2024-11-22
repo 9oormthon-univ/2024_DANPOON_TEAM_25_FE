@@ -1,7 +1,7 @@
 import { FeatureCheck } from '../common/Feature';
 import { StartButton } from '@/components/common/Button/StartButton';
 import { GradientText } from '../common/Text';
-import { NewBadge } from '../common/Badge';
+import { NewBadge } from '../common/Badge/NewBadge';
 
 interface HeroTitleProps extends BaseProps {
   children: React.ReactNode;
