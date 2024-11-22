@@ -17,7 +17,7 @@ export const CopyButton: React.FC<ButtonProps> = ({ children, ...props }) => {
 
   return (
     <Button
-      className="flex items-center px-6 py-4 text-lg gap-x-3 font-medium text-blue-50 bg-blue-800 rounded-lg cursor-pointer"
+      className="flex items-center px-5 py-3 text-lg gap-x-3 font-medium text-blue-50 bg-blue-800 rounded-lg cursor-pointer"
       onClick={handleCopy}
     >
       <Copy className="w-6 h-6 text-blue-50" />
