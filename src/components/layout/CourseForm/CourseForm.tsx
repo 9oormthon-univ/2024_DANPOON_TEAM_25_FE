@@ -8,7 +8,7 @@ interface CourseFormProps extends BaseProps {
 
 export const CourseForm = ({ className = '' }: CourseFormProps) => (
   <div
-    className={`h-full p-5 max-w-4xl gap-7 flex flex-col justify-center shadow-lg shadow-gray-500/30 rounded-xl ${className}`}
+    className={`h-full p-5 max-w-4xl gap-7 flex flex-col justify-center shadow-lg bg-white shadow-gray-500/30 rounded-xl ${className}`}
   >
     <Input label={'수업 명'} placeholder={'수업 이름을 입력해주세요.'} />
     <Input

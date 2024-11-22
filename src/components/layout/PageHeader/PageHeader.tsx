@@ -63,7 +63,11 @@ export const PageHeader = ({
           ) : null}
         </div>
         {hasSubtitle ? (
-          <span className="ml-9 text-sm font-semibold text-gray-500">
+          <span
+            className={`text-sm font-semibold text-gray-500 ${
+              hasBackButton ? 'ml-9' : null
+            }`}
+          >
             {subtitle}
           </span>
         ) : null}
