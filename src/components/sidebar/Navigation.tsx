@@ -1,13 +1,16 @@
 import React from 'react';
 import { NavigationProps } from '@/types/sidebar';
 import { MenuItemButton } from './MenuItemButton';
+import { useRouter } from 'next/router';
 
-export const Navigation: React.FC<NavigationProps> = ({ 
-  items = [], 
+export const Navigation: React.FC<NavigationProps> = ({
+  items = [],
   activeItem,
+  setActiveItem,
   onItemClick,
-  className = ''
+  className = '',
 }) => {
+  const router = useRouter();
   return (
     <nav className={`space-y-2 ${className}`}>
       {items.map((item) => (
@@ -15,7 +18,11 @@ export const Navigation: React.FC<NavigationProps> = ({
           key={item.id}
           icon={item.icon}
           active={activeItem === item.id}
-          onClick={() => onItemClick?.(item)}
+          onClick={() => {
+            onItemClick?.(item);
+            setActiveItem(item.id);
+            router.push(item.route);
+          }}
         >
           {item.text}
         </MenuItemButton>

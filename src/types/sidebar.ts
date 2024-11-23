@@ -30,6 +30,7 @@ export interface MenuItem {
   id: string;
   icon: LucideIcon;
   text: string;
+  route: string;
 }
 
 export interface SidebarIconProps {
@@ -63,7 +64,8 @@ export interface ProfileSectionProps extends ProfileConfig {
 
 export interface NavigationProps {
   items: MenuItem[];
-  activeItem?: string;
+  activeItem?: string;  
+  setActiveItem: (value: string) => void;
   onItemClick?: (item: MenuItem) => void;
   className?: string;
 }
@@ -71,7 +73,8 @@ export interface NavigationProps {
 export interface SidebarProps {
   profile?: ProfileConfig;
   menuItems: MenuItem[];
-  activeMenuItem?: string;
+  activeItem?: string;
+  setActiveItem: (value: string) => void;
   onMenuItemClick?: (item: MenuItem) => void;
   className?: string;
 }
