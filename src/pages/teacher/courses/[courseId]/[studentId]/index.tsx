@@ -6,7 +6,7 @@ import { Profile } from '@/components/layout/Profile/Profile';
 import { SubmissionInfo } from '@/components/layout/Submission/SubmissionInfo';
 import { SubmissionList } from '@/components/layout/Submission/SubmissionList';
 import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
-import { Work } from '@/types/Work';
+import { Work } from '@/types/work';
 import { useState } from 'react';
 
 interface Student {

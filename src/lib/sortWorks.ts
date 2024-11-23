@@ -1,4 +1,4 @@
-import { Work } from "@/types/Work";
+import { Work } from "@/types/work";
 
 export const sortWorks = (works: Work[], sortType: 'deadline' | 'submission') => {
   if (sortType === 'submission') {

@@ -1,5 +1,5 @@
 import { SubmissionInfo } from '@/components/layout/Submission/SubmissionInfo';
-import { Work } from '@/types/Work';
+import { Work } from '@/types/work';
 import React from 'react';
 
 interface SubmissionListProps {
