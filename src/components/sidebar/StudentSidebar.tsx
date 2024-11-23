@@ -16,6 +16,7 @@ export const StudentSidebar: React.FC = () => {
 
   return (
     <Sidebar
+      role="student"
       profile={{
         name: '학생 이름',
         avatar: {

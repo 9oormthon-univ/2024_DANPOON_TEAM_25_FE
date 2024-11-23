@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'student-primary': '#8EBBF7',
+        'student-secondary': '#148CCC',
         custom: {
           lightest: "#FFF9EF", 
           light: "#ECF0F4", 

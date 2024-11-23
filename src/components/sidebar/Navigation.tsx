@@ -4,6 +4,7 @@ import { MenuItemButton } from './MenuItemButton';
 import { useRouter } from 'next/router';
 
 export const Navigation: React.FC<NavigationProps> = ({
+  isStudent,
   items = [],
   activeItem,
   setActiveItem,
@@ -15,6 +16,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     <nav className={`space-y-2 ${className}`}>
       {items.map((item) => (
         <MenuItemButton
+          isStudent={isStudent as boolean}
           key={item.id}
           icon={item.icon}
           active={activeItem === item.id}

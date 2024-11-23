@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { BaseCard } from './BaseCard';
 
 export const CourseCard: React.FC<CourseCardProps> = ({
+  isStudent = false,
   title,
   description,
   students,
@@ -13,15 +14,28 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   className,
 }) => {
   return (
-    <BaseCard className={cn("group overflow-hidden", className)} onClick={onClick}>
-      <div className="h-36 bg-gradient-to-br from-blue-800 to-blue-500 relative overflow-hidden">
+    <BaseCard
+      className={cn('group overflow-hidden', className)}
+      onClick={onClick}
+    >
+      <div
+        className={`h-36 bg-gradient-to-br ${
+          isStudent
+            ? 'from-student-secondary to-student-primary'
+            : 'from-blue-800 to-blue-500'
+        } relative overflow-hidden`}
+      >
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
         <div className="absolute top-3 right-3 bg-white/10 backdrop-blur-md rounded-full px-2.5 py-0.5 text-white text-xs flex items-center gap-1.5">
           <Users size={12} />
           {students}
         </div>
         {isNew && (
-          <div className="absolute top-3 left-3 bg-blue-500 text-white text-xs font-medium px-2 py-0.5 rounded-full">
+          <div
+            className={`absolute top-3 left-3 ${
+              isStudent ? 'bg-student-primary/50' : 'bg-blue-500'
+            } text-white text-xs font-medium px-2 py-0.5 rounded-full`}
+          >
             NEW
           </div>
         )}

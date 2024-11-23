@@ -39,6 +39,7 @@ export const TeacherSidebar: React.FC = () => {
 
   return (
     <Sidebar
+      role="teacher"
       profile={{
         name: '선생님 이름',
         avatar: {

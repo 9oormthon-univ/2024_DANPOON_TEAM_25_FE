@@ -11,6 +11,7 @@ export interface BaseCardProps {
 }
 
 export interface CourseCardProps {
+  isStudent?: boolean;
   title: string;
   description: string;
   students: string | number;
@@ -20,6 +21,7 @@ export interface CourseCardProps {
 }
 
 export interface AddCardProps {
+  isStudent?: boolean;
   icon?: LucideIcon;
   text?: string;
   onClick?: () => void;

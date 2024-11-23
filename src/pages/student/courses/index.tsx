@@ -34,17 +34,19 @@ const CourseDashboard: React.FC = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
         <CourseCard
+          isStudent
           title="모두 함께 파이썬"
           description="기초부터 시작하는 파이썬 프로그래밍"
           students="45"
           isNew
         />
         <CourseCard
+          isStudent
           title="공부를 해볼까요?"
           description="새로운 강의를 시작해보세요"
           students="23"
         />
-        <AddCard />
+        <AddCard isStudent />
       </div>
     </>
   );
