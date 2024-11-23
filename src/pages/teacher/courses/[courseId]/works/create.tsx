@@ -36,7 +36,7 @@ const WorkCreation = () => {
             <div className="p-6 space-y-7">
               <Input
                 label="워크 제목"
-                inputSize="medium"
+                inputSize="small"
                 content={title}
                 setContent={setTitle}
                 placeholder="예) 1차시: 파이썬 기초 문법"
