@@ -20,8 +20,17 @@ const Template: StoryFn<typeof Input> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   label: '수업 명',
-  inputSize: 'medium',
+  inputSize: 'small',
   placeholder: '수업 이름을 입력해주세요.',
+};
+
+const MediumTemplate: StoryFn<typeof Input> = (args) => <Input {...args} />;
+
+export const MediumInputExample = MediumTemplate.bind({});
+MediumInputExample.args = {
+  label: '수업 내용',
+  inputSize: 'medium',
+  placeholder: '수업 내용을 입력해주세요.',
 };
 
 const LargeTemplate: StoryFn<typeof Input> = (args) => <Input {...args} />;
