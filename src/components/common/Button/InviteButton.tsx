@@ -5,6 +5,7 @@ interface InviteButtonProps extends BaseProps {
   className?: string;
   label: string;
   icon: LucideIcon;
+  size?: 'medium' | 'large';
 }
 
 export const InviteButton = ({
