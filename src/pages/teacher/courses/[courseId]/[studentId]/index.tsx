@@ -2,6 +2,7 @@ import { Button } from '@/components/common/Button/Button';
 import { Card } from '@/components/common/Card/Card';
 import { Input } from '@/components/common/Input/Input';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
+import { Profile } from '@/components/layout/Profile/Profile';
 import { SubmissionInfo } from '@/components/layout/Submission/SubmissionInfo';
 import { SubmissionList } from '@/components/layout/Submission/SubmissionList';
 import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
@@ -69,38 +70,46 @@ const StudentOverview = () => {
           hasBackButton
           hasSubtitle={false}
         />
-        <div className="my-8">
-          <Card>
-            <SubmissionList list={student.works} label="워크" />
-          </Card>
-        </div>
-        <div className="my-8">
-          <Card>
-            <SubmissionList list={student.trainings} label="트레이닝" />
-          </Card>
-        </div>
-        <div className="my-8">
-          <Card>
-            <div className="p-6 space-y-5">
-              <h3 className="text-xl text-gray-800 font-bold">평가</h3>
-              <Input
-                inputSize="medium"
-                content={evaluation}
-                setContent={setEvaluation}
-                placeholder="학생에 대한 평가를 입력하세요"
-              />
-              <div className="flex space-x-3 justify-end">
-                <Button
-                  className="bg-transparent px-3 py-2 h-10 text-sm text-blue-800 hover:font-extrabold"
-                  children="임시저장"
-                />
-                <Button
-                  className="bg-blue-800 px-3 py-2 h-10 rounded-lg text-sm text-white"
-                  children="저장"
-                />
-              </div>
+        <div className="flex flex-row space-x-6">
+          <div className="w-1/4 my-8">
+            <Profile name={student.name} />
+          </div>
+
+          <div className="w-3/4">
+            <div className="my-8">
+              <Card>
+                <SubmissionList list={student.works} label="워크" />
+              </Card>
             </div>
-          </Card>
+            <div className="my-8">
+              <Card>
+                <SubmissionList list={student.trainings} label="트레이닝" />
+              </Card>
+            </div>
+            <div className="my-8">
+              <Card>
+                <div className="p-6 space-y-5">
+                  <h3 className="text-xl text-gray-800 font-bold">평가</h3>
+                  <Input
+                    inputSize="medium"
+                    content={evaluation}
+                    setContent={setEvaluation}
+                    placeholder="학생에 대한 평가를 입력하세요"
+                  />
+                  <div className="flex space-x-3 justify-end">
+                    <Button
+                      className="bg-transparent px-3 py-2 h-10 text-sm text-blue-800 hover:font-extrabold"
+                      children="임시저장"
+                    />
+                    <Button
+                      className="bg-blue-800 px-3 py-2 h-10 rounded-lg text-sm text-white"
+                      children="저장"
+                    />
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
