@@ -10,9 +10,7 @@ const CourseRegister: React.FC = () => {
   const [code, setCode] = useState("");
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      <StudentSidebar />
-      <div className="ml-72 p-8">
+    <>
         <PageHeader
           pageTitle="COURSE 등록하기"
           role="student"
@@ -31,8 +29,7 @@ const CourseRegister: React.FC = () => {
           </div>
           <StartButton hasIcon={false}>등록하기</StartButton>
         </Card>
-      </div>
-    </div>
+    </>
   );
 };
 
