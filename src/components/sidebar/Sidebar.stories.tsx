@@ -15,11 +15,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const menuItems = [
-  { id: 'courses', icon: Book, text: '내 수업' },
-  { id: 'add-course', icon: PlusCircle, text: '수업 등록' },
-  { id: 'course-page', icon: Layout, text: '수업 페이지' },
-  { id: 'work-list', icon: Briefcase, text: '워크 목록' },
-  { id: 'settings', icon: Settings, text: '설정' }
+  { id: 'courses', icon: Book, text: '내 수업', route: '/courses' },
+  { id: 'add-course', icon: PlusCircle, text: '수업 등록', route: '/courses' },
+  { id: 'course-page', icon: Layout, text: '수업 페이지', route: '/courses' },
+  { id: 'work-list', icon: Briefcase, text: '워크 목록', route: '/courses' },
+  { id: 'settings', icon: Settings, text: '설정', route: '/courses' }
 ];
 
 export const Default: Story = {
@@ -34,13 +34,15 @@ export const Default: Story = {
       showBadge: true,
     },
     menuItems,
-    activeMenuItem: 'courses',
+    activeItem: 'courses',
+    setActiveItem: () => {},
   },
 };
 
 export const NoProfile: Story = {
   args: {
     menuItems,
-    activeMenuItem: 'courses',
+    activeItem: 'courses',
+    setActiveItem: () => {},
   },
 };
