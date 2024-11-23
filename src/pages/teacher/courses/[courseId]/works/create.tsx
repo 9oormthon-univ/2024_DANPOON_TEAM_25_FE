@@ -26,7 +26,7 @@ const WorkCreation = () => {
       <TeacherSidebar />
       <div className="ml-72 p-8">
         <PageHeader
-          pageTitle="트레이닝 등록하기"
+          pageTitle="워크 등록하기"
           role="teacher"
           hasBackButton
           hasSubtitle={false}
