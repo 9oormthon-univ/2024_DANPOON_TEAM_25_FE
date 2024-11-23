@@ -6,10 +6,12 @@ import { TaskItem } from '@/components/layout/Task/TaskItem';
 import { WorkTrainingTabs } from '@/components/layout/WorkTrainingTabs/WorkTrainingTabs';
 import { taskData } from '@/data/taskData';
 import { Book, Calendar, CirclePlus, Users } from 'lucide-react';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const CourseDetail = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const router = useRouter();
   return (
     <>
       <PageHeader
@@ -37,7 +39,12 @@ const CourseDetail = () => {
               <>
                 <div className="flex justify-between">
                   <h3 className="font-bold text-base pl-3">워크 목록</h3>
-                  <AddButton children="워크 추가" />
+                  <AddButton
+                    children="워크 추가"
+                    onClick={() =>
+                      router.push('/teacher/courses/:courseId/works/create')
+                    }
+                  />
                 </div>
                 {taskData.map((task) => (
                   <TaskItem key={task.id} {...task} />
@@ -49,7 +56,12 @@ const CourseDetail = () => {
               <>
                 <div className="flex justify-between">
                   <h3 className="font-bold text-base pl-3">트레이닝 목록</h3>
-                  <AddButton children="트레이닝 추가" />
+                  <AddButton
+                    children="트레이닝 추가"
+                    onClick={() =>
+                      router.push('/teacher/courses/:courseId/trainings/create')
+                    }
+                  />
                 </div>
                 {taskData.map((task) => (
                   <TaskItem key={task.id} {...task} />
