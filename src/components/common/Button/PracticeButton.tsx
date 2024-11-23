@@ -2,13 +2,20 @@ import React from 'react';
 import { Code2, ChevronRight } from 'lucide-react';
 
 export interface PracticeButtonProps {
+  isStudent?: boolean;
   url: string;
 }
 
-const PracticeButton: React.FC<PracticeButtonProps> = ({ url }) => {
+const PracticeButton: React.FC<PracticeButtonProps> = ({ isStudent, url }) => {
   return (
     <div className="mb-8 overflow-hidden">
-      <div className="bg-gradient-to-r from-blue-800 to-blue-500 p-6 rounded-xl">
+      <div
+        className={`bg-gradient-to-r ${
+          isStudent
+            ? 'from-student-secondary to-student-primary'
+            : 'from-blue-800 to-blue-500'
+        } p-6 rounded-xl`}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="p-3 bg-white/10 rounded-xl">

@@ -40,6 +40,7 @@ export interface SidebarIconProps {
 }
 
 export interface MenuItemButtonProps {
+  isStudent: boolean;
   icon: LucideIcon;
   children: React.ReactNode;
   active?: boolean;
@@ -63,6 +64,7 @@ export interface ProfileSectionProps extends ProfileConfig {
 }
 
 export interface NavigationProps {
+  isStudent?: boolean;
   items: MenuItem[];
   activeItem?: string;  
   setActiveItem: (value: string) => void;
@@ -72,6 +74,7 @@ export interface NavigationProps {
 
 export interface SidebarProps {
   profile?: ProfileConfig;
+  role: 'teacher' | 'student';
   menuItems: MenuItem[];
   activeItem?: string;
   setActiveItem: (value: string) => void;
