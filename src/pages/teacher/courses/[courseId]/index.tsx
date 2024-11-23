@@ -3,7 +3,6 @@ import { SummaryCard } from '@/components/common/Card/SummaryCard';
 import { PageHeader } from '@/components/layout/PageHeader/PageHeader';
 import { TaskItem } from '@/components/layout/Task/TaskItem';
 import { WorkTrainingTabs } from '@/components/layout/WorkTrainingTabs/WorkTrainingTabs';
-import { TeacherSidebar } from '@/components/sidebar/TeacherSidebar';
 import { taskData } from '@/data/taskData';
 import { Book, Calendar, CirclePlus, Users } from 'lucide-react';
 import { useState } from 'react';
@@ -11,9 +10,7 @@ import { useState } from 'react';
 const CourseDetail = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TeacherSidebar />
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="모두 함께 파이썬"
           isDetailPage
@@ -45,8 +42,7 @@ const CourseDetail = () => {
             </div>
           </div>
         </Card>
-      </div>
-    </div>
+      </>
   );
 };
 

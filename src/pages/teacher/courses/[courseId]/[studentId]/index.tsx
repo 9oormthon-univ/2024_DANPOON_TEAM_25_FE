@@ -60,9 +60,7 @@ const StudentOverview = () => {
     ],
   });
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TeacherSidebar />
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle={student.name}
           isDetailPage={false}
@@ -111,8 +109,7 @@ const StudentOverview = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+     </>
   );
 };
 

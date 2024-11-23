@@ -17,9 +17,7 @@ const TrainingDetail = () => {
     setSearchTerm(value);
   };
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TeacherSidebar />
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="1차시: 파이썬 기초 문법"
           isDetailPage
@@ -83,8 +81,7 @@ const TrainingDetail = () => {
             </div>
           </div>
         </Card>
-      </div>
-    </div>
+     </>
   );
 };
 

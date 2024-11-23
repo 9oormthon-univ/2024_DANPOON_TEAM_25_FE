@@ -8,10 +8,7 @@ const CoureseCreation: React.FC = () => {
   const [courseName, setCourseName] = useState('');
   const [courseDescription, setCourseDescription] = useState('');
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      <TeacherSidebar />
-
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="MY COURSE"
           role="teacher"
@@ -36,8 +33,7 @@ const CoureseCreation: React.FC = () => {
             />
           </div>
         </div>
-      </div>
-    </div>
+     </>
   );
 };
 
