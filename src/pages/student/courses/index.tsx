@@ -26,17 +26,21 @@ const CourseDashboard: React.FC = () => {
         >
           <FiMenu className="w-6 h-6" />
         </button>
-        {isMobileMenuOpen && (
-          <>
-            <div
-              className="fixed inset-0 bg-black/50 z-40"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            <div className="fixed left-0 top-0 w-72 h-full bg-white z-50">
-              <StudentSidebar />
-            </div>
-          </>
-        )}
+        <>
+          <div
+            className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out ${
+              isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div
+            className={`fixed left-0 top-0 w-72 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+              isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            }`}
+          >
+            <StudentSidebar />
+          </div>
+        </>
       </div>
       <div className="w-full md:ml-72 p-4 md:p-8">
         <div className="mt-16 md:mt-0">
