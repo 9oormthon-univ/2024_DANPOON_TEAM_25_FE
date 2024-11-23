@@ -24,6 +24,7 @@ const menuItems = [
 
 export const Default: Story = {
   args: {
+    role: 'student',
     profile: {
       avatar: {
         src: 'https://via.placeholder.com/150',
@@ -41,6 +42,7 @@ export const Default: Story = {
 
 export const NoProfile: Story = {
   args: {
+    role: 'teacher',
     menuItems,
     activeItem: 'courses',
     setActiveItem: () => {},

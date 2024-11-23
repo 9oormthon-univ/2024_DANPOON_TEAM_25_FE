@@ -23,6 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    isStudent: true, 
     icon: Book,
     children: '내 수업',
   },
@@ -30,6 +31,7 @@ export const Default: Story = {
 
 export const Active: Story = {
   args: {
+    isStudent: true, 
     icon: Book,
     children: '내 수업',
     active: true,
@@ -38,6 +40,7 @@ export const Active: Story = {
 
 export const WithClick: Story = {
   args: {
+    isStudent: true, 
     icon: Settings,
     children: '설정',
     onClick: () => alert('Clicked!'),
