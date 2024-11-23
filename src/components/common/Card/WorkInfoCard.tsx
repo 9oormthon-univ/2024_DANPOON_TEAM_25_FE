@@ -1,5 +1,6 @@
 import { Book, CheckCircle, Clock } from 'lucide-react';
-import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'; 
 
 export interface WorkInfoCardProps {
   title: string;
@@ -16,7 +17,7 @@ const WorkInfoCard: React.FC<WorkInfoCardProps> = ({
   dueDate,
   status,
   description,
-  icon = <Book size={24} className="text-blue-800" />, 
+  icon = <Book size={24} className="text-blue-800" />,
 }) => {
   return (
     <div className="p-6 bg-white shadow rounded-lg">
@@ -42,7 +43,7 @@ const WorkInfoCard: React.FC<WorkInfoCardProps> = ({
         </div>
       </div>
       <div className="prose prose-blue max-w-none">
-        <p className="whitespace-pre-line">{description}</p>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>
       </div>
     </div>
   );
