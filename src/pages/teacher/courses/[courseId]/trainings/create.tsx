@@ -22,9 +22,7 @@ const TrainingCreation = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TeacherSidebar />
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="트레이닝 등록하기"
           role="teacher"
@@ -73,8 +71,7 @@ const TrainingCreation = () => {
             </div>
           </Card>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 export default TrainingCreation;

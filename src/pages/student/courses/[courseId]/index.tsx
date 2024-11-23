@@ -14,9 +14,7 @@ const CourseDetail = () => {
   const sortedWorks = sortWorks(worksData, sortType);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <StudentSidebar />
-      <div className="ml-72 p-8">
+    <>
         <PageHeader
           pageTitle="모두 함께 파이썬"
           role="student"
@@ -38,8 +36,7 @@ const CourseDetail = () => {
             <WorkItem key={work.id} {...work} />
           ))}
         </Card>
-      </div>
-    </div>
+      </>
   );
 };
 

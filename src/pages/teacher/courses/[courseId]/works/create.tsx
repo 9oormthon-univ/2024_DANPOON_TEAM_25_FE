@@ -22,9 +22,7 @@ const WorkCreation = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TeacherSidebar />
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="워크 등록하기"
           role="teacher"
@@ -73,8 +71,7 @@ const WorkCreation = () => {
             </div>
           </Card>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 export default WorkCreation;

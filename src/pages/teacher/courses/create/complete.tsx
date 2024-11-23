@@ -8,10 +8,7 @@ import { Share2 } from 'lucide-react';
 
 const CoureseCreattionComplete: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      <TeacherSidebar />
-
-      <div className="ml-72 p-8">
+     <>
         <PageHeader
           pageTitle="Course 등록하기"
           role="teacher"
@@ -46,8 +43,7 @@ const CoureseCreattionComplete: React.FC = () => {
             />
           </div>
         </Card>
-      </div>
-    </div>
+      </>
   );
 };
 

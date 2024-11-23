@@ -14,10 +14,7 @@ const CourseDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      <TeacherSidebar />
-
-      <div className="ml-72 p-8">
+    <>
         <PageHeader
           pageTitle="MY COURSE"
           role="teacher"
@@ -51,8 +48,7 @@ const CourseDashboard: React.FC = () => {
           />
           <AddCard />
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 
